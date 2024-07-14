@@ -1,0 +1,28 @@
+---
+import ExternalLink from "../components/ExternalLink.astro"
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="home">
+  <h1>home</h1>
+  <p>hello! i'm a web developer.</p>
+  <br />
+  <details>
+    <summary>donate</summary>
+    <p>willing to donate me? here you go:</p>
+    <ul>
+      <li>
+        <ExternalLink to="ko-fi.com/nitrrine">ko-fi</ExternalLink>
+      </li>
+    </ul>
+  </details>
+  <details>
+    <summary>my socials</summary>
+    <ul>
+      <li>
+        <ExternalLink to="github.com/Nitrrine">github</ExternalLink>
+      </li>
+      <li><ExternalLink to="x.com/Nitrrine">twitter</ExternalLink></li>
+    </ul>
+  </details>
+</Layout>

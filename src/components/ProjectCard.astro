@@ -1,0 +1,31 @@
+---
+import ExternalLink from "./ExternalLink.astro"
+
+const { name, desc, links } = Astro.props
+let splitLinks = links.split(";")
+---
+
+<div class="project-card">
+  <h2>{name}</h2>
+  <p>{desc}</p>
+  <ul>
+    {
+      splitLinks.map((link: string) => (
+        <li>
+          <ExternalLink to={link.split(":")[1]}>
+            {link.split(":")[0]}
+          </ExternalLink>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+  }
+</style>
