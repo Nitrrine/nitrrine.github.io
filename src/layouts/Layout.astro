@@ -46,6 +46,8 @@ const { title } = Astro.props
 
 <style lang="scss" is:global>
   :root {
+    --pink: #f4b8e4;
+    --blue: #8caaee;
     --lavender: #babbf1;
     --text: #c6d0f5;
     --base: #303446;
@@ -55,6 +57,11 @@ const { title } = Astro.props
 
   * {
     box-sizing: border-box;
+
+    &::selection {
+      color: var(--crust);
+      background: var(--blue);
+    }
   }
 
   body {
@@ -66,6 +73,7 @@ const { title } = Astro.props
     padding: 0;
     background: var(--base);
     color: var(--text);
+    font-size: 1em;
   }
 
   h1,
@@ -82,17 +90,14 @@ const { title } = Astro.props
   }
 
   a {
-    color: var(--lavender);
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    color: var(--blue);
   }
 
   details {
     summary {
       cursor: pointer;
+      user-select: none;
+      padding: 0.3em 0;
     }
   }
 
@@ -125,7 +130,8 @@ const { title } = Astro.props
       padding: 0 1em;
 
       .left a {
-        color: var(--text);
+        color: var(--pink);
+        text-decoration: none;
       }
     }
   }
