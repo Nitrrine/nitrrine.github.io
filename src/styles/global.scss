@@ -46,6 +46,12 @@ a {
   color: var(--blue);
 }
 
+ul,
+ol,
+dl {
+  margin: 0;
+}
+
 details {
   summary {
     cursor: pointer;
