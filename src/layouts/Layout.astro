@@ -1,8 +1,9 @@
 ---
-import "../styles/fonts.css"
+import "../styles/fonts.scss"
+import "../styles/global.scss"
 import ExternalLink from "../components/ExternalLink.astro"
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
@@ -10,7 +11,14 @@ const { title } = Astro.props
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title ? `${title} - nitrrine` : "nitrrine"}</title>
+    <title>
+      {title ? `${title} - nitrrine` : "nitrrine"}
+    </title>
+    {
+      description
+        ? `<meta name="description" content="${description}" />`
+        : null
+    }
     <meta name="theme-color" content="#f4b8e4" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
@@ -24,6 +32,7 @@ const { title } = Astro.props
         <div class="right">
           <a href="/">home</a>
           <a href="/projects">projects</a>
+          <a href="/contact">contact</a>
         </div>
       </div>
     </nav>
@@ -32,115 +41,16 @@ const { title } = Astro.props
     </main>
     <footer>
       <p>
-        the contents of this page are protected under <ExternalLink
-          to="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-          >CC BY-NC-SA 4.0 license</ExternalLink
+        contents of this website are protected under <ExternalLink
+          to="creativecommons.org/licenses/by-sa/4.0/"
+          >CC BY-SA 4.0 license</ExternalLink
         >.
       </p>
       <p>
-        all logos used on this site are the property of their respective owners.
+        made with love, built with astro. view the source code <ExternalLink
+          to="github.com/Nitrrine/nitrrine.github.io">on github</ExternalLink
+        >.
       </p>
     </footer>
   </body>
 </html>
-
-<style lang="scss" is:global>
-  :root {
-    --pink: #f4b8e4;
-    --blue: #8caaee;
-    --lavender: #babbf1;
-    --text: #c6d0f5;
-    --base: #303446;
-    --mantle: #292c3c;
-    --crust: #232634;
-  }
-
-  * {
-    box-sizing: border-box;
-
-    &::selection {
-      color: var(--crust);
-      background: var(--blue);
-    }
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    font-family: "JetBrains Mono";
-    height: 100dvh;
-    margin: 0;
-    padding: 0;
-    background: var(--base);
-    color: var(--text);
-    font-size: 1em;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0 0 0.5em 0;
-  }
-
-  p {
-    margin: 0 0 0.3em 0;
-  }
-
-  a {
-    color: var(--blue);
-  }
-
-  details {
-    summary {
-      cursor: pointer;
-      user-select: none;
-      padding: 0.3em 0;
-    }
-  }
-
-  main {
-    flex: 1 1 auto;
-    margin: 0 auto;
-    max-width: 900px;
-    width: 100%;
-    padding: 1em;
-  }
-
-  nav,
-  footer {
-    background: var(--mantle);
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 64px;
-    height: 64px;
-
-    .inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 900px;
-      width: 100%;
-      padding: 0 1em;
-
-      .left a {
-        color: var(--pink);
-        text-decoration: none;
-      }
-    }
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-    padding: 1em;
-  }
-</style>
