@@ -3,7 +3,7 @@ import "../styles/fonts.scss"
 import "../styles/global.scss"
 import ExternalLink from "../components/ExternalLink.astro"
 
-const { title, description } = Astro.props
+const { title, desc } = Astro.props
 ---
 
 <!doctype html>
@@ -14,11 +14,7 @@ const { title, description } = Astro.props
     <title>
       {title ? `${title} - nitrrine` : "nitrrine"}
     </title>
-    {
-      description
-        ? `<meta name="description" content="${description}" />`
-        : null
-    }
+    <meta name="description" content={desc} />
     <meta name="theme-color" content="#f4b8e4" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
@@ -32,6 +28,7 @@ const { title, description } = Astro.props
         <div class="right">
           <a href="/">home</a>
           <a href="/projects">projects</a>
+          <a href="/scripts">scripts</a>
           <a href="/contact">contact</a>
         </div>
       </div>

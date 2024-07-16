@@ -1,11 +1,14 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro"
 import Layout from "../layouts/Layout.astro"
+
+let pageTitle = "projects"
+let pageDescription = "things that i'm currently working on."
 ---
 
-<Layout title="projects">
-  <h1>projects</h1>
-  <p>things that i'm currently working on.</p>
+<Layout title={pageTitle} desc={pageDescription}>
+  <h1>{pageTitle}</h1>
+  <p>{pageDescription}</p>
   <div class="projects">
     <ProjectCard
       name="stopmalwarecontent"
