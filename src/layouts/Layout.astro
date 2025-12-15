@@ -1,0 +1,33 @@
+---
+const { title } = Astro.props
+
+import ExternalLink from "../components/ExternalLink.astro"
+import "../styles/global.scss"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>
+      <h2>Nitrrine</h2>
+    </nav>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="left">
+        Copyright &copy; {new Date().getFullYear()}
+      </div>
+      <div class="right">
+        <ExternalLink to="https://github.com/Nitrrine/nitrrine.github.io"
+          >This website is open source</ExternalLink
+        >
+      </div>
+    </footer>
+  </body>
+</html>

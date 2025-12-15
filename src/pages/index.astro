@@ -1,0 +1,71 @@
+---
+import ExternalLink from "../components/ExternalLink.astro"
+import ProjectCard from "../components/ProjectCard.astro"
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="$ ./nitrrine.sh">
+  <section>
+    <h1>Hello, world!</h1>
+    <p>
+      I'm a hobby web developer and self-taught software engineer from the
+      Kazakhstan.
+    </p>
+  </section>
+  <section>
+    <h2>Experiences</h2>
+    <p>Projects and things I've worked on or still working.</p>
+    <ul>
+      <li>
+        <ProjectCard
+          title="Modrinth - A mod distribution platform"
+          date="March 2025 - Present"
+          description="Discord bot maintainer and discord community moderator."
+          links={[
+            { label: "Website", href: "https://modrinth.com" },
+            {
+              label: "Discord Bot",
+              href: "https://github.com/modrinth/discord-bot",
+            },
+          ]}
+        />
+      </li>
+      <li>
+        <ProjectCard
+          title="StopMalwareContent - Organization to fight against malicious content"
+          date="June 2024 - Present"
+          description="Founder, project maintainer."
+          links={[
+            {
+              label: "Website",
+              href: "https://stopmalwarecontent.lodine.xyz",
+            },
+            {
+              label: "GitHub",
+              href: "https://github.com/StopMalwareContent",
+            },
+          ]}
+        />
+      </li>
+      <li>
+        <ProjectCard
+          title="NotEssetnial - Website linking to mods that can substitute Essential’s features"
+          date="June 2024 - August 2025"
+          description="Core team member, project maintainer."
+          links={[
+            {
+              label: "GitHub",
+              href: "https://github.com/usevital/notessential",
+            },
+          ]}
+        />
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Donate</h2>
+    <ExternalLink to="https://ko-fi.com/nitrrine"
+      >Support me via Ko-fi</ExternalLink
+    >
+  </section>
+</Layout>

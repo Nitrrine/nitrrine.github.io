@@ -1,0 +1,45 @@
+---
+import ExternalLink from "./ExternalLink.astro"
+
+interface Link {
+  label: string
+  href: string
+}
+
+interface Props {
+  title: string
+  date: string
+  description: string
+  links?: Link[]
+}
+
+const props = Astro.props as Props
+
+const title = props.title
+const date = props.date
+const description = props.description
+const links = props.links ?? []
+---
+
+<div class="project-card">
+  <span class="title">{title}</span>
+  <span class="date">{date}</span>
+  <span class="description">{description}</span>
+
+  {
+    links.length > 0 && (
+      <div class="links">
+        {links.map(({ label, href }) => (
+          <ExternalLink to={href}>{label}</ExternalLink>
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .links {
+    display: flex;
+    gap: 0.3em;
+  }
+</style>
