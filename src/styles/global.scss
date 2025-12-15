@@ -17,7 +17,6 @@ body {
   color: #d9d9d9;
   background: #0f0f0f;
   height: 100dvh;
-  padding-top: 2em;
 }
 
 nav,
@@ -29,6 +28,13 @@ footer {
 }
 
 nav {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  max-height: 64px;
+  height: 100%;
+  margin-top: 3em;
+
   h2 {
     padding: 0;
   }
