@@ -1,7 +1,18 @@
 ---
-const { to } = Astro.props
+import { ExternalLink } from '@lucide/astro'
+
+const { to, showIcon = false } = Astro.props
 ---
 
 <a href={to} target="_blank" rel="noopener noreferrer" class="external-link">
+  {showIcon && <ExternalLink size="16" />}
   <slot />
 </a>
+
+<style>
+  .external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+  }
+</style>

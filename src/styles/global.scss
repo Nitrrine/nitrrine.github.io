@@ -5,6 +5,8 @@
   --background: #24273a;
   --text: #cad3f5;
   --border: #494d64;
+
+  --border-radius: 5px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -64,13 +66,29 @@ footer {
   flex-direction: column;
   padding: 0.5em;
   border: 1px solid var(--border);
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   gap: 0.2em;
   margin-bottom: 0.5em;
 
   .title {
     font-weight: bold;
     font-size: 1.1em;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0.2em 0.4em;
+    border: 1px var(--accent) solid;
+    border-radius: var(--border-radius);
+
+    &:hover {
+      background: var(--accent);
+      color: var(--background);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }
 

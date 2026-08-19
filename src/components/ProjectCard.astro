@@ -30,7 +30,9 @@ const links = props.links ?? []
     links.length > 0 && (
       <div class="links">
         {links.map(({ label, href }) => (
-          <ExternalLink to={href}>{label}</ExternalLink>
+          <ExternalLink to={href} showIcon>
+            {label}
+          </ExternalLink>
         ))}
       </div>
     )

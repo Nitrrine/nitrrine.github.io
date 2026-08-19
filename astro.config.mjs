@@ -6,5 +6,6 @@ export default defineConfig({
   site: 'https://nitrrine.github.io',
   redirects: {
     '/bluesky': 'https://bsky.app/profile/nitrrine.lodine.xyz',
+    '/github': 'https://github.com/Nitrrine',
   },
 })
