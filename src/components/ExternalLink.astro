@@ -1,10 +1,16 @@
 ---
 import { ExternalLink } from '@lucide/astro'
 
-const { to, showIcon = false } = Astro.props
+const { to, showIcon = false, type } = Astro.props
 ---
 
-<a href={to} target="_blank" rel="noopener noreferrer" class="external-link">
+<a
+  href={to}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="external-link"
+  {type}
+>
   {showIcon && <ExternalLink size="16" />}
   <slot />
 </a>
