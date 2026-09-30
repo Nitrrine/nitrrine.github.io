@@ -1,8 +1,8 @@
 ---
 import { Kofi } from 'simple-icons-astro'
+import ExperienceCard from '../components/ExperienceCard.astro'
 import ExternalLink from '../components/ExternalLink.astro'
-import ProjectCard from '../components/ProjectCard.astro'
-import { projects } from '../data/projects'
+import { volunteerExperience } from '../data/experience'
 import Layout from '../layouts/Layout.astro'
 ---
 
@@ -15,13 +15,12 @@ import Layout from '../layouts/Layout.astro'
     </p>
   </section>
   <section>
-    <h2>Experiences</h2>
-    <p>Projects and things I've worked on or still working.</p>
+    <h2>Volunteer Experience</h2>
     <ul>
       {
-        projects.map((project) => (
+        volunteerExperience.map((project) => (
           <li>
-            <ProjectCard
+            <ExperienceCard
               title={project.title}
               date={project.date}
               description={project.description}

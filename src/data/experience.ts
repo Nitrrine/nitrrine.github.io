@@ -3,18 +3,18 @@ type Link = {
   href: string
 }
 
-type Project = {
+type Experience = {
   title: string
   description: string
   date: string
   links?: Link[]
 }
 
-export const projects: Project[] = [
+export const volunteerExperience: Experience[] = [
   {
     title: 'Modrinth - A mod distribution platform',
     date: 'March 2025 - Present',
-    description: 'Lead Discord Moderator & Discord Bot Maintainer.',
+    description: 'Lead Community Moderator & Discord Bot Maintainer.',
     links: [
       { label: 'Website', href: 'https://modrinth.com' },
       {
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     title:
       'StopMalwareContent - Organization to fight against malicious content',
     date: 'June 2024 - Present',
-    description: 'Founder, project maintainer.',
+    description: 'Founder, Project Maintainer.',
     links: [
       {
         label: 'Website',
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     title:
       'NotEssential - Website linking to mods that can substitute Essential’s features',
     date: 'June 2024 - August 2025',
-    description: 'Core team member, project maintainer.',
+    description: 'Core Team Member, Project Maintainer.',
     links: [
       {
         label: 'GitHub',
